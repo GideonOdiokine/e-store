@@ -1,1 +1,1 @@
-KAYAK Frontend Engineer Coding Exercise
+Simple E-commerce store
