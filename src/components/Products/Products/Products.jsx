@@ -4,7 +4,6 @@ import Product from "./product/Product";
 import useStyles from "./styles";
 
 const products = [
-  
   { id: 1, name: "Shoes", desc: "Running Shoes", price: "$100" },
   { id: 2, name: "Macbook", desc: "Apple Macbook", price: "$10" },
 ];
