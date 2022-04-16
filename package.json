@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@chec/commerce.js": "^2.8.0",
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
     "@material-ui/styles": "^4.11.5",
     "@reduxjs/toolkit": "^1.5.1",
+    "@stripe/react-stripe-js": "^1.7.1",
+    "@stripe/stripe-js": "^1.27.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -14,6 +17,7 @@
     "fetch-jsonp": "^1.2.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-hook-form": "^7.29.0",
     "react-router-dom": "^6.2.2",
     "react-scripts": "3.4.0",
     "sass": "^1.49.9"
