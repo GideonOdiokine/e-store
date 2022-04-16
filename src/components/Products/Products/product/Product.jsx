@@ -16,7 +16,7 @@ const Product = ({ product }) => {
     <Card className={classes.root}>
       <CardMedia
         className={classes.media}
-        image="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bWFjYm9va3xlbnwwfHwwfHw%3D&w=1000&q=80"
+        image={product.image.url}
         title={product.name}
       />
       <CardContent>
@@ -24,11 +24,17 @@ const Product = ({ product }) => {
           <Typography variant="h5" gutterBottom>
             {product.name}
           </Typography>
-          <Typography variant="h5">{product.price}</Typography>
+          <Typography variant="h5">
+            {product.price.formatted_with_symbol}
+          </Typography>
         </div>
-        <Typography variant="body1" color="textSecondary">
-          {product.description}
-        </Typography>
+        <Typography
+          dangerouslySetInnerHTML={{
+            __html: product.description,
+          }}
+          variant="body1"
+          color="textSecondary"
+        />
       </CardContent>
       <CardActions disableSpacing className={classes.CardActions}>
         <IconButton arial-label="Add to cart">
