@@ -18,8 +18,8 @@ const App = () => {
 
   return (
     <div>
-      <Navbar />
-      <Products />
+      <Navbar products={products} />
+      <Products products={products} />
     </div>
   );
 };
