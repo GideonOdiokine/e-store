@@ -45,6 +45,7 @@ const App = () => {
     fetchProducts();
     fetchCart();
   }, []);
+  console.log(cart);
   return (
     <>
       <div style={{ display: "flex" }}>
@@ -52,7 +53,7 @@ const App = () => {
         <Routes>
           <Route exact path='/' element={<Products products={products} handleAddToCart={handleAddToCart} />} />
           <Route exact path='/cart' element={<Cart cart={cart} handleRemoveFromCart={handleRemoveFromCart} handleUpdateCartQty={handleUpdateCartQty} handleEmptyCart={handleEmptyCart} />} />
-          <Route exact path='/checkout' element={<Checkout />} />
+          <Route exact path='/checkout' element={<Checkout cart={cart} />} />
         </Routes>
       </div>
     </>
