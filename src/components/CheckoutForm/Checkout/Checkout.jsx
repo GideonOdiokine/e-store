@@ -16,13 +16,14 @@ import PaymentForm from "./PaymentForm";
 
 const steps = ["Shipping", "Payment details"];
 
-const Checkout = () => {
+const Checkout = ({ cart }) => {
 	const [activeStep, setActiveStep] = useState(0);
 	const classes = useStyles();
 
 	useEffect(() => {
 		const generateToken = async () => {
 			try {
+				const token = await commerce.checkout.generateToken();
 			} catch (error) {}
 		};
 	}, []);
