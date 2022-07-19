@@ -45,7 +45,7 @@ const App = () => {
     fetchProducts();
     fetchCart();
   }, []);
-  console.log(cart);
+  // console.log(cart);
   return (
     <>
       <div style={{ display: "flex" }}>
