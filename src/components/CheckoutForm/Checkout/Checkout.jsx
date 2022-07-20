@@ -13,27 +13,39 @@ import {
 import useStyles from "./styles";
 import AddressForm from "../AddressForm";
 import PaymentForm from "./PaymentForm";
+import { commerce } from "../../../lib/commerce";
 
 const steps = ["Shipping", "Payment details"];
 
 const Checkout = ({ cart }) => {
 	const [activeStep, setActiveStep] = useState(0);
+	const [checkoutToken, setCheckoutToken] = useState(null);
 	const classes = useStyles();
 
 	useEffect(() => {
 		const generateToken = async () => {
 			try {
-				const token = await commerce.checkout.generateToken();
+				const token = await commerce.checkout.generateToken(cart.id, {
+					type: "cart",
+				});
+				console.log(token);
+				setCheckoutToken(token);
 			} catch (error) {}
 		};
-	}, []);
+		generateToken();
+	}, [cart]);
 
 	const Confirmation = () => (
 		<>
 			<div>Confirmation</div>
 		</>
 	);
-	const Form = () => (activeStep === 0 ? <AddressForm /> : <PaymentForm />);
+	const Form = () =>
+		activeStep === 0 ? (
+			<AddressForm checkoutToken={checkoutToken} />
+		) : (
+			<PaymentForm />
+		);
 	return (
 		<>
 			<div className={classes.toolbar} />
