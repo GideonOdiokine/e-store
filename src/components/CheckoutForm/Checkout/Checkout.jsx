@@ -12,7 +12,7 @@ import {
 } from "@material-ui/core";
 import useStyles from "./styles";
 import AddressForm from "../AddressForm";
-import PaymentForm from "./PaymentForm";
+import PaymentForm from "../PaymentForm";
 import { commerce } from "../../../lib/commerce";
 
 const steps = ["Shipping", "Payment details"];
@@ -54,7 +54,11 @@ const Checkout = ({ cart }) => {
 		activeStep === 0 ? (
 			<AddressForm next={next} checkoutToken={checkoutToken} />
 		) : (
-			<PaymentForm shippingData={shippingData} />
+			<PaymentForm
+				backStep={backStep}
+				checkoutToken={checkoutToken}
+				shippingData={shippingData}
+			/>
 		);
 	return (
 		<>
