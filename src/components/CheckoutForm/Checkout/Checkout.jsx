@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
 	CssBaseline,
 	Paper,
@@ -19,6 +19,13 @@ const steps = ["Shipping", "Payment details"];
 const Checkout = () => {
 	const [activeStep, setActiveStep] = useState(0);
 	const classes = useStyles();
+
+	useEffect(() => {
+		const generateToken = async () => {
+			try {
+			} catch (error) {}
+		};
+	}, []);
 
 	const Confirmation = () => (
 		<>
