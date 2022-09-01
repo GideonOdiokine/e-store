@@ -17,7 +17,7 @@ import { commerce } from "../../../lib/commerce";
 
 const steps = ["Shipping", "Payment details"];
 
-const Checkout = ({ cart }) => {
+const Checkout = ({ cart, handleCaptureCheckout, order }) => {
 	const [activeStep, setActiveStep] = useState(0);
 	const [checkoutToken, setCheckoutToken] = useState(null);
 	const [shippingData, setShippingData] = useState({});
@@ -41,7 +41,6 @@ const Checkout = ({ cart }) => {
 
 	const next = (data) => {
 		setShippingData(data);
-		console.log(data);
 		nextStep();
 	};
 
@@ -56,12 +55,15 @@ const Checkout = ({ cart }) => {
 		) : (
 			<PaymentForm
 				backStep={backStep}
+				nextStep={nextStep}
 				checkoutToken={checkoutToken}
 				shippingData={shippingData}
+				onCaptureCheckout={handleCaptureCheckout}
 			/>
 		);
 	return (
 		<>
+			<CssBaseline />
 			<div className={classes.toolbar} />
 			<main className={classes.layout}>
 				<Paper className={classes.paper}>

@@ -13,7 +13,7 @@ import { ShoppingCart } from "@material-ui/icons";
 import useStyles from "./styles";
 import logo from "../../asset/logo.png";
 
-const Navbar = ({ total_items }) => {
+const Navbar = ({ totalItems }) => {
 	const classes = useStyles();
 	const location = useLocation();
 
@@ -43,7 +43,9 @@ const Navbar = ({ total_items }) => {
 								to='/cart'
 								arial-label='Show cart items'
 								color='inherit'>
-								<Badge badgeContent={total_items} color='secondary'>
+								<Badge
+									badgeContent={totalItems ? totalItems : ""}
+									color='secondary'>
 									<ShoppingCart />
 								</Badge>
 							</IconButton>
