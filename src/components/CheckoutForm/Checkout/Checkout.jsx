@@ -46,7 +46,7 @@ const Checkout = ({ cart, handleCaptureCheckout, order }) => {
 
 	const Confirmation = () => (
 		<>
-			<div>Confirmation</div>
+			<div>Thank you for purchasing</div>
 		</>
 	);
 	const Form = () =>
